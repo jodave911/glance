@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(240 10% 3.9%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(240 10% 3.9%);
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(240 10% 3.9%);
+  --color-primary: hsl(240 5.9% 10%);
+  --color-primary-foreground: hsl(0 0% 98%);
+  --color-secondary: hsl(240 4.8% 95.9%);
+  --color-secondary-foreground: hsl(240 5.9% 10%);
+  --color-muted: hsl(240 4.8% 95.9%);
+  --color-muted-foreground: hsl(240 3.8% 46.1%);
+  --color-accent: hsl(240 4.8% 95.9%);
+  --color-accent-foreground: hsl(240 5.9% 10%);
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-border: hsl(240 5.9% 90%);
+  --color-input: hsl(240 5.9% 90%);
+  --color-ring: hsl(240 5.9% 10%);
+  --color-chart-1: hsl(12 76% 61%);
+  --color-chart-2: hsl(173 58% 39%);
+  --color-chart-3: hsl(197 37% 24%);
+  --color-chart-4: hsl(43 74% 66%);
+  --color-chart-5: hsl(27 87% 67%);
+  --color-sidebar: hsl(0 0% 98%);
+  --color-sidebar-foreground: hsl(240 5.3% 26.1%);
+  --color-sidebar-primary: hsl(240 5.9% 10%);
+  --color-sidebar-primary-foreground: hsl(0 0% 98%);
+  --color-sidebar-accent: hsl(240 4.8% 95.9%);
+  --color-sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --color-sidebar-border: hsl(220 13% 91%);
+  --color-sidebar-ring: hsl(217.2 91.2% 59.8%);
+  --radius: 0.625rem;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  .dark {
+    --color-background: hsl(224 10% 6%);
+    --color-foreground: hsl(0 0% 95%);
+    --color-card: hsl(224 10% 8%);
+    --color-card-foreground: hsl(0 0% 95%);
+    --color-popover: hsl(224 10% 8%);
+    --color-popover-foreground: hsl(0 0% 95%);
+    --color-primary: hsl(142 72% 48%);
+    --color-primary-foreground: hsl(144 80% 10%);
+    --color-secondary: hsl(224 10% 14%);
+    --color-secondary-foreground: hsl(0 0% 90%);
+    --color-muted: hsl(224 10% 14%);
+    --color-muted-foreground: hsl(215 10% 55%);
+    --color-accent: hsl(224 10% 14%);
+    --color-accent-foreground: hsl(0 0% 90%);
+    --color-destructive: hsl(0 72% 51%);
+    --color-destructive-foreground: hsl(0 0% 98%);
+    --color-border: hsl(224 10% 16%);
+    --color-input: hsl(224 10% 16%);
+    --color-ring: hsl(142 72% 48%);
+    --color-chart-1: hsl(220 70% 50%);
+    --color-chart-2: hsl(160 60% 45%);
+    --color-chart-3: hsl(30 80% 55%);
+    --color-chart-4: hsl(280 65% 60%);
+    --color-chart-5: hsl(340 75% 55%);
+    --color-sidebar: hsl(224 10% 7%);
+    --color-sidebar-foreground: hsl(215 10% 65%);
+    --color-sidebar-primary: hsl(142 72% 48%);
+    --color-sidebar-primary-foreground: hsl(144 80% 10%);
+    --color-sidebar-accent: hsl(224 10% 12%);
+    --color-sidebar-accent-foreground: hsl(0 0% 90%);
+    --color-sidebar-border: hsl(224 10% 14%);
+    --color-sidebar-ring: hsl(142 72% 48%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom utilities */
+.glass {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(224 10% 20%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(224 10% 30%);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Terminal / log viewer */
+.log-viewer {
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
