@@ -1,6 +1,6 @@
 # Glance
 
-A modern, secure, and beautiful web interface for managing your Samba (SMB) NAS Server. Built with Next.js 15, React, Tailwind CSS, and Framer Motion.
+A modern, secure, and beautiful web interface for managing your Samba (SMB) NAS Server. Built with Next.js 16, React, Tailwind CSS, and Framer Motion.
 
 ## Features
 
@@ -22,7 +22,7 @@ A modern, secure, and beautiful web interface for managing your Samba (SMB) NAS 
 
 - A Linux server running Samba (`smbd`).
 - SSH access enabled (`sshd`) on the server.
-- Node.js >= 18.x
+- Node.js >= 20.9.0
 
 ## Installation
 
